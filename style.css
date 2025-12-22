@@ -567,7 +567,7 @@ footer p {
   }
 
   .item img {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     display: block;
 margin-bottom: 10px;
@@ -660,5 +660,6 @@ text-align: left;
     width: 100%;    /* 图片自适应容器 */
     box-shadow: 0 15px 45px rgba(0,0,0,0.3); /* 增加投影深度，使其在文字上方更清晰 */
   }
+
 
 }
