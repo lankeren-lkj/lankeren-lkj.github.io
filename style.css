@@ -1,0 +1,684 @@
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body {
+  /* 使用 Manrope 作为正文，字重设为 300(细) 或 400(常规) */
+  font-family: 'Manrope', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 300; 
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: #111;
+  margin: 0;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  z-index: 1000;
+}
+
+header a {
+  text-decoration: none;
+  color: #111;
+}
+
+
+/* 标题：使用优雅的衬线体 */
+h1, h2, h3, .logo a {
+  /* 使用 Space Grotesk 展现几何结构感 */
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500; /* 500比加粗更轻盈，更有高级感 */
+  letter-spacing: -0.03em; /* 稍微收紧字间距，更有张力 */
+  margin-top: 0;
+}
+
+/* 导航栏：使用稍微粗一点的字重，增加功能感 */
+nav a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase; /* 建议导航用全大写，显得更规整 */
+  letter-spacing: 0.05em;
+  margin-left: 30px;
+}
+
+.logo img {
+  height: 80px;      /* 控制 logo 高度，推荐 18–24px */
+  width: auto;
+  display: block;
+}
+
+
+/* ===== Main ===== */
+main {
+  max-width: 960px;
+  margin: 120px 150px 60px;
+}
+
+/* ===== Year Sections (年份标题样式) ===== */
+
+/* ===== 带有平滑动画的年份章节 ===== */
+
+details {
+  margin-bottom: 20px;
+  display: grid;
+  /* 关键：利用 grid 的 rows 实现高度从 0 到 1 的过渡 */
+  grid-template-rows: 0fr; 
+  transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin-bottom 0.5s ease;
+}
+
+/* 当 details 处于 open 状态时 */
+details[open] {
+  grid-template-rows: 1fr;
+  margin-bottom: 20px; /* 展开后拉大间距 */
+}
+
+summary {
+  display: inline-block; /* 确保只有点击文字有效 */
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  transition: all 0.3s ease;
+  user-select: none;
+  color: #111;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 仅在鼠标悬停在年份文字上时起作用 */
+summary:hover {
+  opacity: 0.5;
+  letter-spacing: 0.03em; /* 增加轻微的展开感 */
+}
+
+/* 内部包装容器：必须包裹内容以实现平滑动画 */
+.details-content {
+  overflow: hidden;
+  min-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.4s ease;
+}
+
+details[open] .details-content {
+  visibility: visible;
+  opacity: 1;
+}
+/* ===== Image Caption (统一图片说明) ===== */
+.image-caption {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 12px;          /* 与 .meta 一致 */
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ===== Items ===== */
+.item {
+  margin-bottom: 60px;
+}
+
+.item img {
+  width: 100%;
+max-width: 360px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.item a {
+  color: #111;
+  text-decoration: none;
+}
+
+/* 1. 统一设置文字粗细、字体和基本间距 */
+.item .item-title, 
+.item .item-description {
+  font-family: 'Manrope', sans-serif !important;
+  /* 如果 500 不够粗，请尝试改为 700 */
+  font-weight: 500 !important; 
+  color: #111;
+  display: block; /* 确保外边距生效 */
+}
+
+/* 2. 精确控制两者之间的距离 */
+.item-title {
+  /* 调整标题下方的距离：数值越小，距离越近 */
+  margin-bottom: 2px !important; 
+  margin-top: 10px; /* 图片与标题之间的距离 */
+}
+
+.item-description {
+  /* 调整描述上方的距离：设置为 0 可以让它紧贴标题 */
+  margin-top: 0px !important; 
+  /* 调整描述下方的距离：推开下一个项目 */
+  margin-bottom: 40px !important; 
+}
+
+/* 3. 清除通用的 p 标签干扰 */
+.item p {
+  font-size: 15px;
+  line-height: 1.5;
+max-width: 640px; /* 确保文字不会横跨整个屏幕，而是和图片一样宽 */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 4. 项目名称下划线 */
+/* 统一所有链接的下划线外观 */
+
+.project-name, 
+.inline-link {
+  text-decoration: underline !important; /* 确保显示下划线 */
+  text-decoration-thickness: 1px;        /* 线条粗细 */
+  text-underline-offset: 3px;            /* 关键：让下划线与文字保持 3px 距离，增加高级感 */
+  transition: opacity 0.3s;
+}
+
+/* 悬停效果 */
+.inline-link:hover,
+.item-link:hover .project-name {
+  opacity: 0.6;
+}
+
+/* ===== About Page ===== */
+.about-section {
+  display: flex;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 240px;
+  display: block;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* 正文段落稍微加深易读性 */
+.about-text p {
+  font-size: 15px;
+  margin-bottom: 1.5em;
+}
+
+.about-text p:first-child {
+  margin-top: 0;
+}
+
+.about-Projects {
+  margin-top: 80px;
+}
+
+.about-Projects h2 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.about-Projects p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  font-weight: 500;
+}
+
+.project {
+  margin-bottom: 36px;
+}
+
+/* 项目名称特别强调 */
+.project h3 {
+  font-size: 22px;
+margin-top: 0;      /* 确保顶部没有多余间距 */
+  margin-bottom: 2px; /* 关键：显式缩小与下方 .meta 的距离 */
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+/* 项目元数据（年份/类型） */
+.project .meta {
+margin-top: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.project .description {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+/* --- 项目列表悬停效果 --- */
+
+/* 1. 标题设置 */
+.project-title {
+  /* 保持 relative 用于定位上下文并不重要了，因为我们要用 fixed，
+     但保持 inline-block 可以确保只有鼠标碰到文字时才触发 */
+  display: inline-block; 
+  cursor: pointer;
+}
+
+.project-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.project-title:hover {
+  /* 鼠标悬停时给标题一个淡淡的下划线，增加交互感 */
+  border-bottom: 1px solid #111;
+}
+
+/* --- 移动端优化 (可选) --- */
+/* 如果屏幕宽度小于 1000px（比如平板或手机），就不显示这个悬浮图了，以免遮挡文字 */
+@media (max-width: 1000px) {
+  .project-title:hover .project-image {
+    display: none;
+  }
+}
+
+.project-hover-media {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-45%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity 0.5s ease, 
+    transform 0.5s cubic-bezier(0.2, 1, 0.3, 1),
+    visibility 0.5s;
+  z-index: 10;
+  pointer-events: none;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
+}
+
+.project-hover-media img {
+  width: 350px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+
+/* caption 在图下 */
+.project-hover-media .image-caption {
+  margin-top: 6px;
+}
+
+/* hover 触发 */
+.project-title:hover .project-hover-media {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%);
+}
+
+/* ===== Inline text link (About page) ===== */
+.inline-link {
+  color: inherit;              /* 继承正文颜色 */
+  text-decoration: underline;  /* 强制下划线 */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;  /* 下划线离文字远一点，更高级 */
+}
+
+.inline-link:hover {
+  opacity: 0.6;                /* 悬停时轻微变化 */
+}
+
+/* ===== Project Page ===== */
+
+
+.project-content {
+  margin: 120px 150px 80px;
+}
+
+.project-hero {
+  max-width: 640px; /* 与 .project-text 的宽度一致 */
+  margin: 0 0 30px; /* 如果文字是左对齐的，这里也保持左对齐 */
+}
+
+.project-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* 选中 project-hero 里的最后一张图片 */
+.project-hero img:last-child {
+  margin-bottom: 10px; /* 让最后一张图距离下方的 Sculpture 标题非常近 */
+}
+
+/* ===== Two-column images (project specific) ===== */
+.project-hero--two-columns {
+  display: flex;
+  gap: 8px;              /* 两张图之间的距离 */
+}
+
+.project-hero--two-columns .project-image-block {
+  flex: 1;
+}
+
+.project-hero--two-columns img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-hero--two-columns {
+  margin-bottom: 32px; /* 从 60 → 32，很常用的策展间距 */
+}
+
+.project-hero--two-columns .project-image-block {
+  margin-bottom: 12px;
+}
+
+
+.project-text {
+  max-width: 640px;
+}
+
+.project-text h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+margin-top: 0
+}
+
+.project-text h2 {
+  font-size: 18px;
+  margin-bottom: 2px;
+margin-top: 12px
+}
+
+.project-meta {
+ font-family: 'Space Grotesk', sans-serif;
+font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 12px;
+margin-top: 0;
+}
+
+.project-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.project-text strong {
+  font-weight: 500;
+}
+
+.project-video {
+  width: 100%;
+  margin-top: 20px;    /* 增加与上方 Sculpture 段落的行距 */
+  margin-bottom: 0;    /* 彻底消除视频容器下方的间距 */
+}
+
+.project-image-block {
+  margin-bottom: 28px;   /* 控制“一组图片 + caption”之间的距离 */
+}
+
+.project-image-block img {
+  margin-bottom: 6px;    /* 图片 → caption 的距离（很近）*/
+}
+
+.project-catalogue {
+  margin-top: 20px;   /* 与正文拉开一点距离 */
+}
+
+.project-catalogue a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;    /* 比正文大 */
+  font-weight: 500;
+  color: #111;
+  text-decoration: underline;
+}
+
+.project-catalogue a:hover {
+  opacity: 0.6;
+}
+
+/* ===== Project inline images (for mobile) ===== */
+.project-image-inline {
+  margin: 14px 0 14px;   /* 顺便整体收紧一点 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* 控制图片整体居中 */
+margin-bottom: 10px;
+}
+
+.project-image-inline img {
+  width: 80%;
+  display: block;
+}
+
+/* 关键：caption 跟随图片宽度 */
+.project-image-inline .image-caption {
+  width: 80%;
+  text-align: left;
+  margin-top: 6px;
+}
+
+.project .description {
+  margin-top: 6px;
+}
+
+
+/* ===== Tabula Rasa titles use About project styles ===== */
+
+.essay-title {
+  font-size: 22px;
+margin-top: 0;      /* 确保顶部没有多余间距 */
+  margin-bottom: 2px; /* 关键：显式缩小与下方 .meta 的距离 */
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.essay-meta {
+margin-top: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.essay-content {
+  max-width: 800px;      /* 推荐 600–680 之间 */
+  margin-left: 0;        /* 保持左对齐，符合你现在的气质 */
+  margin-top: 12px;
+}
+
+.essay-content p {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.essay-summary {
+  pointer-events: none;
+}
+
+.essay-click {
+  pointer-events: auto;
+  display: inline-block;
+}
+
+.essay-click:hover .essay-title {
+  border-bottom: 1px solid #111;
+}
+
+
+.tabula-content img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 6px 0 28px 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  max-width: 960px;              /* 与 main 容器宽度一致 */
+  margin: 0 150px 20px;          /* 保持与 main 相同的左边距 150px */
+  padding-top: 10px;             /* 与上方内容的间距 */
+  border-top: 1px solid #eee;    /* 增加一条细线增加精致感 */
+}
+
+footer p {
+  font-family: 'Space Grotesk', sans-serif; /* 使用与标题一致的字体 */
+  font-size: 12px;               /* 较小的字号 */
+  color: #888;                   /* 使用与项目信息一致的灰色 */
+  text-transform: uppercase;     /* 全大写处理 */
+  letter-spacing: 0.05em;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    padding: 16px 20px;
+  }
+
+  nav a {
+    margin-left: 12px;
+    font-size: 14px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  /* Main content */
+  main {
+    max-width: 100%;
+    margin: 100px 20px 60px;
+  }
+
+  .item img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+margin-bottom: 10px;
+  }
+
+  /* About page */
+  .about-section {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Tabula Rasa */
+  .tabula-content {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .essay-content {
+    max-width: 100%;
+  }
+
+  .essay-title {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .essay-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .essay-content img {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Project pages */
+
+.project-content {
+    /* 在手机上进一步缩小边距，让内容几乎占满全屏 */
+    margin: 40px 15px 40px; 
+  }
+  
+  .project-hero {
+    max-width: 100%; /* 图片在手机上占满宽度 */
+  }
+
+/* ===== Footer ===== */
+footer {
+  max-width: 100%;       /* 确保宽度占满，方便对齐 */
+    margin: 0 20px 40px;   /* 关键：这里的 20px 必须和 main 的 margin 一致 */
+  padding-top: 12px;          /* 从 20px → 12px */
+  border-top: 1px solid #eee;
+}
+
+
+footer p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+text-align: left;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+}
+@media (min-width: 1000px) {
+  .project-image-inline {
+    display: none;
+  }
+}
+@media (max-width: 999px) {
+  .project-hover-media {
+    display: none;
+  }
+
+  .project-image-inline img {
+    width: 80%;
+    margin: 0 auto; /* 居中，更像策展排版 */
+  }
+}
+
