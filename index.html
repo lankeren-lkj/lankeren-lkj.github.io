@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8">
+  <title>StudioKejunLi</title>
+<link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+<div class="logo">
+  <a href="index.html">
+    <img src="images/Kejun li.png" alt="Your Name">
+  </a>
+</div>
+
+
+    <nav>
+      <a href="about.html">About</a>
+<a href="Tabula Rasa.html">Tabula Rasa</a>
+      <a href="https://www.instagram.com/kejunli_/" target="_blank">Instagram</a>
+    </nav>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+ <main>
+
+  <!-- ===== 2025 ===== -->
+  <details open>
+    <summary>2025</summary>
+<div class="details-content">
+
+    <!-- The Last Gesture -->
+<div class="item">
+  <img src="images/project-The last gesture/The last gesture01.jpg" alt="The Last Gesture">
+
+<p class="item-title">
+Project: 
+<a href="projects/The Last Gesture.html" class="item-link">
+<span class="project-name">The Last Gesture</span>
+</a>
+</p>
+    <p class="item-description">
+      A nipple-activated light sculpture flips the gaze and expands into a ritual-like performance.
+    </p>
+
+</div>
+
+
+    <!-- Financial Times -->
+    <div class="item">
+        <img src="images/NEWHTSI_675_COVER HIGH RES RGB.jpg" alt="Financial Times">
+<p class="item-title">
+Press: Featured as one of the<a href="https://www.ft.com/content/2c6e6bc7-4b00-4c74-86aa-e054dee75e7e?fbclid=PAZXh0bgNhZW0CMTEAAaccddiNGSupFrc8UOqubNecESVQHay6hbPw7ttlAFHtQxNkHfGE7g1TNg2sAA_aem_KAXfpEE91IAyj51cOupr-A&syn-25a6b1a6=1" class="item-link"><span class="project-name"><em>'Five Bright Design Stars to Know Now'</em></span></a> in the October Design Issue of Financial Times HTSI.
+</p>
+      
+    </div>
+
+    <!-- Wallpaper China -->
+    <div class="item">
+        <img src="images/mmexport1765804987077.jpg" alt="Wallpaper China">
+<p class="item-title">
+Award: <a href="https://wallpaperdesignawards.cn/shortlist/" class="item-link"><span class="project-name"><em>Emerging Designer of the Year – Shortlist (2025)</em></span></a>. Wallpaper* China
+</p>
+    </div>
+
+<!-- Gemini -->
+<div class="item">
+<img src="images/gemini/vasi01.jpg" alt="Gemini">
+<p class="item-title">
+Collaboration: <a href="projects/Gemini.html" class="item-link"><span class="project-name">Gemini</span></a>
+</p>
+<p class="item-title">
+This collection with <a href="https://www.bosatrade.com/" target="_blank" class="inline-link">Bosa ceramiche</a> explores duality through modular geometry, transforming flat hexagonal tiles into sculptural forms where curves and lines coexist in balance.
+</p>
+
+    </div>
+
+<!-- Neo-baroqueism -->
+<div class="item">
+<img src="images/neo-baroqueism/C14.jpg" alt="Neo-Baroqueism">
+<p class="item-title">
+Exhibition: <a href="projects/Neo-baroqueism.html" class="item-link"><span class="project-name">Neo-Baroqueism</span></a>, Salonesatellite, Milan design week
+</p>
+
+<p class="item-title">
+A modular tile system that reimagines architectural ornament through geometry and user interaction, exploring how historical decorative languages can be revitalized with modern fabrication and participatory engagement. </p>
+
+    </div>
+
+  </details>
+
+  <!-- ===== 2024 ===== -->
+  <details>
+    <summary>2024</summary>
+<div class="details-content">
+    <div class="item">
+        <img src="images/cadenza/Alcova 2024_01.jpg" alt="Cadenza">
+      
+<p class="item-title">
+Collaboration: <a href="projects/Cadenza.html" class="item-link">
+<span class="project-name">Cadenza</span></a>
+</p>
+
+<p class="item-title">
+A hexagon-based ceramic tile collaboration with <a href="https://demarchiverona.it/it/collezioni/collezione-cadenza" target="_blank" class="inline-link">De Marchi Verona</a> capable of generating three-dimensional surfaces and spatial rhythms, originally developed through computational exploration, this collection was later adopted for commercial production and presented internationally.</p>
+    </div>
+</div>
+  </details>
+
+  <!-- ===== 2023 ===== -->
+  <details>
+    <summary>2023</summary>
+<div class="details-content">
+    <div class="item">
+        <img src="images/A Tile and Its Thousand Possibilities/Alcova2023_01.jpg" alt="A Tile and Its Thousand Possibilities">
+      
+<p class="item-title">
+Exhibition: <a href="projects/A tile and its thousand possibilities.html" class="item-link"><span class="project-name">A Tile and Its Thousand Possibilities</span></a>, Alcova, Milan design week
+</p>
+<p class="item-title">
+ This project explores how a single fixed tile can generate endless visual outcomes through random, playful tessellation, transforming an ordinary object into an interactive and self-exploring design experience.</p>
+    </div>
+ </div>
+  </details>
+
+</main>
+
+
+<footer>
+  <p>© 2025 Studio Kejun Li. All rights reserved.</p>
+</footer>
+<script>
+  // 选取所有的 <details> 元素
+  const allDetails = document.querySelectorAll("details");
+
+  allDetails.forEach((targetDetail) => {
+    // 监听每个 details 的点击（或者更准确地说是 toggle 事件）
+    targetDetail.addEventListener("click", (e) => {
+      // 如果你是要点击展开时关闭其他
+      if (!targetDetail.open) {
+        allDetails.forEach((detail) => {
+          if (detail !== targetDetail) {
+            detail.removeAttribute("open");
+          }
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
