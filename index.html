@@ -222,10 +222,7 @@ allDetails.forEach((detail) => {
         const headerOffset = 110; // header高度
         const y = summary.getBoundingClientRect().top + window.scrollY - headerOffset;
 
-        window.scrollTo({
-          top: y,
-          behavior: "smooth"
-        });
+        window.scrollTo(0, y);
 
       }, 100);
     }
