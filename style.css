@@ -1,0 +1,747 @@
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: 'Manrope', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 300; 
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: #111;
+  margin: 0;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  z-index: 1000;
+}
+
+header a {
+  text-decoration: none;
+  color: #111;
+}
+
+h1, h2, h3, .logo a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500; 
+  letter-spacing: -0.03em; 
+  margin-top: 0;
+}
+
+nav a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase; 
+  letter-spacing: 0.05em;
+  margin-left: 30px;
+}
+
+.logo img {
+  height: 80px;      
+  width: auto;
+  display: block;
+}
+
+.instagram-link img {
+  width: 18px;      
+  height: 18px;
+  display: block;
+  opacity: 0.8;
+}
+
+.instagram-link:hover img {
+  opacity: 1;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .instagram-link img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ===== Main ===== */
+main {
+  max-width: 960px;
+  margin: 120px 150px 60px;
+}
+
+/* ===== Year Sections & Details ===== */
+details { 
+  margin-bottom: 20px; 
+  display: grid; 
+  grid-template-rows: 0fr; 
+  transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin-bottom 0.5s ease; 
+} 
+
+details[open] { 
+  grid-template-rows: 1fr; 
+  margin-bottom: 20px; 
+}
+
+summary {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  color: #111;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:hover {
+  opacity: 0.5;
+  letter-spacing: 0.03em; 
+}
+
+summary:focus,
+summary:active {
+  outline: none;
+  color: #111;
+}
+
+summary:focus .essay-title,
+summary:active .essay-title {
+  color: #111;
+  text-decoration: none;
+}
+
+summary:focus .essay-title {
+  text-decoration: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.details-content {
+  overflow: hidden;
+  min-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.4s ease;
+}
+
+details[open] .details-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ===== Image Caption (通用基础样式) ===== */
+.image-caption {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 12px;          
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ===== Items ===== */
+.item {
+  margin-bottom: 60px;
+}
+
+.item img {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.item a {
+  color: #111;
+  text-decoration: none;
+}
+
+.item .item-title, 
+.item .item-description {
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 500 !important; 
+  color: #111;
+  display: block; 
+}
+
+.item-title--label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em; 
+}
+
+.item-title {
+  margin-bottom: 2px !important; 
+  margin-top: 10px; 
+}
+
+.item-description {
+  margin-top: 0px !important; 
+  margin-bottom: 40px !important; 
+}
+
+.item p {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 640px; 
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.project-name, 
+.inline-link {
+  text-decoration: underline !important; 
+  text-decoration-thickness: 0.5px;        
+  text-underline-offset: 6px;            
+  transition: opacity 0.3s;
+}
+
+.inline-link:hover,
+.item-link:hover .project-name {
+  opacity: 0.6;
+}
+
+.project-name,
+.project-name:visited,
+.project-name:active,
+.project-name:focus,
+.inline-link,
+.inline-link:visited,
+.inline-link:active,
+.inline-link:focus {
+  color: #111 !important;
+  text-decoration: underline !important;
+  outline: none;
+}
+
+/* ===== Brand links ===== */
+.brand-link {
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  opacity: 0.5;
+}
+
+.brand-strong {
+  font-weight: 500;
+  color: #111;
+}
+
+/* ===== About Page ===== */
+.about-section {
+  display: flex;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 240px;
+  display: block;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-text p {
+  font-size: 15px;
+  margin-bottom: 1.5em;
+}
+
+.about-text p:first-child {
+  margin-top: 0;
+}
+
+.about-Projects {
+  margin-top: 80px;
+}
+
+.about-Projects h2 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.about-Projects p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  font-weight: 500;
+}
+
+.project {
+  margin-bottom: 36px;
+}
+
+.project h3 {
+  font-size: 22px;
+  margin-top: 0;      
+  margin-bottom: 2px; 
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.project .meta {
+  margin-top: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.project .description {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.project-title {
+  display: inline-block; 
+  cursor: pointer;
+}
+
+.project-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-title:hover {
+  border-bottom: 1px solid #111;
+}
+
+@media (max-width: 1000px) {
+  .project-title:hover .project-image {
+    display: none;
+  }
+}
+
+.project-hover-media {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-45%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity 0.5s ease, 
+    transform 0.5s cubic-bezier(0.2, 1, 0.3, 1),
+    visibility 0.5s;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-hover-media img {
+  width: 350px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+
+.project-hover-media .image-caption {
+  margin-top: 6px;
+}
+
+.project-title:hover .project-hover-media {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%);
+}
+
+.inline-link {
+  color: inherit;              
+  text-decoration: underline;  
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;  
+}
+
+.inline-link:hover {
+  opacity: 0.6;                
+}
+
+/* ===== Project Page ===== */
+.project-content {
+  margin: 120px 150px 80px;
+}
+
+.project-hero {
+  max-width: 640px; 
+  margin: 0 0 30px; 
+}
+
+.project-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.project-hero img:last-child {
+  margin-bottom: 10px; 
+}
+
+.project-hero--two-columns {
+  display: flex;
+  gap: 8px;              
+}
+
+.project-hero--two-columns .project-image-block {
+  flex: 1;
+}
+
+.project-hero--two-columns img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-hero--two-columns {
+  margin-bottom: 32px; 
+}
+
+.project-hero--two-columns .project-image-block {
+  margin-bottom: 12px;
+}
+
+.project-text {
+  max-width: 640px;
+}
+
+.project-text h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.project-text h2 {
+  font-size: 18px;
+  margin-bottom: 2px;
+  margin-top: 12px;
+}
+
+.project-meta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.project-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.project-text strong {
+  font-weight: 500;
+}
+
+.project-video {
+  width: 100%;
+  margin-top: 20px;    
+  margin-bottom: 0;    
+}
+
+.project-image-block {
+  margin-bottom: 28px;   
+}
+
+.project-image-block img {
+  margin-bottom: 6px;    
+}
+
+.project-catalogue a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;    
+  font-weight: 500;
+  color: #111;
+  text-decoration: underline;
+}
+
+.project-catalogue a:hover {
+  opacity: 0.6;
+}
+
+.project-image-inline {
+  margin: 14px 0 14px;   
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  margin-bottom: 10px;
+}
+
+.project-image-inline img {
+  width: 90%;
+  display: block;
+}
+
+.project-image-inline .image-caption {
+  width: 90%;
+  text-align: left;
+  margin-top: 6px;
+}
+
+.project .description {
+  margin-top: 6px;
+}
+
+/* ===== Tabula Rasa / Notes Base Styles ===== */
+.essay-title {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  text-decoration: none;
+  text-decoration-thickness: 0.6px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color 0.3s;
+}
+
+.essay-meta {
+  margin-top: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.essay-content {
+  max-width: 680px;
+  margin-left: 0;
+  margin-top: 12px;
+}
+
+.essay-content p {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.essay-summary {
+  pointer-events: none;
+}
+
+.essay-click {
+  pointer-events: auto;
+  display: block;
+  max-width: 680px;
+}
+
+.essay-title {
+  text-decoration: none;
+}
+
+.essay-click:hover .essay-title {
+  text-decoration: underline;
+  text-decoration-thickness: 0.6px;
+  text-underline-offset: 6px;
+}
+
+.essay-click,
+.essay-click:visited,
+.essay-click:active,
+.essay-click:focus {
+  color: #111;
+  text-decoration: none;
+  outline: none;
+}
+
+/* ===== Footer ===== */
+footer {
+  max-width: 960px;              
+  margin: 0 150px 20px;          
+  padding-top: 10px;             
+  border-top: 1px solid #eee;    
+}
+
+footer p {
+  font-family: 'Space Grotesk', sans-serif; 
+  font-size: 12px;               
+  color: #888;                   
+  text-transform: uppercase;     
+  letter-spacing: 0.05em;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 16px 20px;
+  }
+
+  nav a {
+    margin-left: 12px;
+    font-size: 14px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 100px 20px 60px;
+  }
+
+  .item img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .about-section {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .tabula-content {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .essay-content {
+    max-width: 100%;
+  }
+
+  .essay-title {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .essay-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  footer {
+    max-width: 100%;
+    margin: 0 20px 40px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+  }
+
+  footer p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .project-image-inline {
+    display: none;
+  }
+}
+
+@media (max-width: 999px) {
+  .project-hover-media {
+    display: none;
+  }
+
+  .project-image-inline img {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* ===== NOTES PAGE IMAGE & CAPTION OPTIMIZATION (ABOUT PAGE STYLE) ===== */
+
+/* 1. 限制文章内图片宽度并水平居中 */
+.essay-content > img,
+.tabula-content img {
+  display: block !important;
+  width: 80% !important;                 /* 限制图片宽度为文章的 80% */
+  max-width: 800px !important;           /* 限制大屏下的最大绝对宽度 */
+  height: auto !important;
+  margin: 24px auto 0px auto !important; /* 左右 auto 居中，底部为 0 紧贴说明文字 */
+}
+
+/* 2. 完美同步 About 页面的说明文字格式与视觉系统 */
+.essay-content .image-caption,
+.tabula-content .image-caption {
+  display: block !important;
+  width: 80% !important;                 /* 保持和图片完全一样的 80% 宽度 */
+  max-width: 800px !important;           /* 保持和图片完全一样的最大绝对宽度 */
+  margin: 6px auto 14px auto !important;  /* 完美缩减：下边距从 32px 压缩至 14px，解决断层 */
+  
+  /* 严格复刻 About 页面的原有原生属性 */
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;            
+  color: #888 !important;                
+  text-transform: uppercase !important;  
+  line-height: 1.4 !important;
+  text-align: left !important;           /* 在居中容器内部左对齐，完美贴合图片左下角 */
+  letter-spacing: 0.05em !important;    
+}
+
+/* 3. 彻底解决：文章标题、日期离正文首段太远的问题 */
+.essay-content {
+  margin-top: 0px !important;            
+  padding-top: 0px !important;
+}
+
+/* 消除正文第一个段落自带的浏览器默认顶边距，让它直接贴近日期 */
+.essay-content > p:first-child {
+  margin-top: 0px !important;            
+  padding-top: 4px !important;           
+}
+
+summary {
+  margin-bottom: 0px !important;         
+}
