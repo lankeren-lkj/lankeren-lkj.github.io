@@ -55,14 +55,16 @@ nav a {
   display: block;
 }
 
-.instagram-link img {
+.instagram-link img,
+.xiaohongshu-link img {
   width: 18px;      
   height: 18px;
   display: block;
   opacity: 0.8;
 }
 
-.instagram-link:hover img {
+.instagram-link:hover img,
+.xiaohongshu-link:hover img {
   opacity: 1;
 }
 
@@ -73,7 +75,8 @@ nav a {
 }
 
 @media (max-width: 768px) {
-  .instagram-link img {
+  .instagram-link img,
+  .xiaohongshu-link img {
     width: 22px;
     height: 22px;
   }
